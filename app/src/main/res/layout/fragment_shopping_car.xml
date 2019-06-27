@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_eff3f6"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_title" />
+
+
+
+
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        app:layout_constraintBottom_toTopOf="@+id/rl_bottom"
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:visibility="visible"
+        app:srlAccentColor="@color/color_base_red"
+        app:srlEnableFooterFollowWhenLoadFinished="true"
+        app:srlEnableScrollContentWhenLoaded="true"
+        tools:ignore="MissingConstraints">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shopping_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_f4f4f4"
+            android:textColor="@color/color_464646" />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:srlAccentColor="@color/color_464646"
+            app:srlClassicsSpinnerStyle="Translate" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:id="@+id/ll_all_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+
+            <CheckBox
+                android:id="@+id/cb_all_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shopping_car_choose"
+                android:button="@null"
+                android:checked="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="@string/shopping_car_all_choose"
+                android:textColor="@color/color_4a4a4a"
+                android:textSize="12sp"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_close_an_account"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/color_base_red"
+            android:gravity="center"
+            android:text="@string/shopping_car_close_an_account"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_all_money"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/tv_close_an_account"
+            android:gravity="center"
+            android:text="¥98.90"
+            android:textColor="@color/color_ff4040"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/tv_all_money"
+            android:gravity="center"
+            android:text="@string/shopping_car_total"
+            android:textColor="@color/color_4a4a4a"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

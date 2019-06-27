@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.fragment.app.FragmentTabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="49dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/realtabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </androidx.fragment.app.FragmentTabHost>
+
+        <TextView
+            android:layout_above="@+id/ll_bottom"
+            android:background="@color/color_ebebeb"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:paddingBottom="2dp"
+                android:paddingTop="8dp"
+                android:id="@+id/tv_tabhost_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_home_sel"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:text="@string/main_tab_home"
+                android:textColor="#ff4040"
+                android:textSize="10sp" />
+
+            <TextView
+                android:paddingBottom="2dp"
+                android:paddingTop="8dp"
+                android:id="@+id/tv_tabhost_shooping_car"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_cart"
+                android:gravity="center"
+                android:text="@string/main_tab_shopping_car"
+                android:textColor="#dedde2"
+                android:drawablePadding="3dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:paddingBottom="2dp"
+                android:paddingTop="8dp"
+                android:id="@+id/tv_tabhost_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_user"
+                android:gravity="center"
+                android:text="@string/main_tab_mine"
+                android:drawablePadding="3dp"
+                android:textColor="#dedde2"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

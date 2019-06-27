@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">lotMoney</string>
+
+
+    <string name="main_tab_home">首页</string>
+    <string name="main_tab_shopping_car">购物车</string>
+    <string name="main_tab_mine">我的</string>
+    <string name="again_exit">再按一次退出</string>
+
+    <!--我的-->
+    <string name="my_integral">我的积分</string>
+    <string name="my_all_orders">全部订单</string>
+    <string name="my_obligation">待付款</string>
+    <string name="my_send_the_goods">待发货</string>
+    <string name="my_wait_for_receiving">待收货</string>
+    <string name="my_after_sale">人工售后</string>
+    <string name="my_commonly_used_function">常用功能</string>
+    <string name="my_clear_cache">清理缓存</string>
+    <string name="my_shipping_address">收货地址</string>
+
+    <!--购物车-->
+    <string name="shopping_car_clear">清空购物车</string>
+    <string name="shopping_car_edit">编辑</string>
+    <string name="shopping_car_integral">积分可抵扣运费，也可转给他人</string>
+    <string name="shopping_car_all_choose">全选</string>
+    <string name="shopping_car_total">合计：</string>
+    <string name="shopping_car_close_an_account">结算</string>
+
+
+
+
+</resources>
