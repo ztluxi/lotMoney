@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#7935ed</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 
     <color name="color_base_red">#ff4040</color>
 
@@ -17,7 +18,9 @@
     <color name="color_464646">#464646</color>
     <color name="color_eeeeee">#eeeeee</color>
     <color name="color_5d5d5d">#5d5d5d</color>
-    <color name="color_eff3f6">#eff3f6</color>
     <color name="color_4a4a4a">#4a4a4a</color>
+    <color name="color_c4c4c2">#c4c4c2</color>
+    <color name="color_9b9b9b">#9b9b9b</color>
+    <color name="color_eff3f6">#eff3f6</color>
 
 </resources>

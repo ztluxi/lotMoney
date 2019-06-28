@@ -25,8 +25,8 @@
     <string name="shopping_car_all_choose">全选</string>
     <string name="shopping_car_total">合计：</string>
     <string name="shopping_car_close_an_account">结算</string>
-
-
+    <string name="shopping_car_sale_out">已销售：</string>
+    <string name="shopping_car_repertory">库存：</string>
 
 
 </resources>
