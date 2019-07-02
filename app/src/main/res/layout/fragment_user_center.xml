@@ -122,12 +122,14 @@
 
 
             <TextView
+                android:id="@+id/tv_all_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/ic_all_order"
                 android:drawablePadding="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
                 android:text="@string/my_all_orders"
                 android:textColor="@color/color_464646" />
 
@@ -136,8 +138,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/color_eeeeee" />
 
 

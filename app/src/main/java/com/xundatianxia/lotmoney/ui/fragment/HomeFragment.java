@@ -59,7 +59,7 @@ public class HomeFragment extends BaseFragment implements HomeView {
         marqueeView.startWithList(messages);
         adapter = new HomeListAdapter(listBeans, getActivity());
         home_list.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        home_list.addItemDecoration(new GridSpacingItemDecoration(2, 20, false));
+        home_list.addItemDecoration(new GridSpacingItemDecoration(2, 10, true));
         home_list.setAdapter(adapter);
         relativeLayout.setEnableAutoLoadmore(true);
         relativeLayout.setOnRefreshListener(new OnRefreshListener() {

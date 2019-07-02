@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="217dp"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/tv_order_obligation"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentRight="true"
+        android:background="@color/white"
+        android:gravity="end|center"
+        android:paddingRight="12sp"
+        android:text="@string/my_obligation"
+        android:textColor="@color/color_base_red"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_center"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:layout_below="@+id/tv_order_obligation"
+        android:background="@color/color_eff3f6"
+        android:orientation="horizontal"
+        android:paddingTop="6dp">
+
+
+        <ImageView
+            android:id="@+id/iv_order_product_url"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginLeft="11dp"
+            android:layout_toRightOf="@+id/cb_choose_shopping_car_item"
+            android:background="@drawable/ic_user_center_bg" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingRight="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/tv_order_new_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥59.00"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_order_old_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_centerline"
+                    android:text="¥79.00"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_order_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="end"
+                    android:text="x1"
+                    android:textColor="@color/color_9b9b9b" />
+            </LinearLayout>
+
+            <TextView
+                android:paddingRight="70dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/tv_order_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="4"
+                android:text="地方撒"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@+id/ll_money"
+                tools:ignore="MissingConstraints" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="82dp"
+                android:gravity="center|bottom"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shopping_car_sale_out"
+                    android:textColor="@color/color_9c9c9c"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_order_sale_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="909"
+                    android:textColor="@color/color_9c9c9c"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/shopping_car_repertory"
+                    android:textColor="@color/color_9c9c9c"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_order_repertory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000"
+                    android:textColor="@color/color_9c9c9c"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_order_touch_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/touch_service_bg"
+        android:gravity="center"
+        android:text="@string/my_touch_service"
+        android:textColor="@color/color_4a4a4a"
+        android:textSize="12sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_center"
+        android:layout_marginTop="5dp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/tv_order_product_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="共1件商品"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_order_total_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="合计：¥15.74"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_order_freight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="（含运费¥0.00）"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+

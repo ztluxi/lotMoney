@@ -65,6 +65,8 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.2.58'
     //fragment pageindicator
     implementation 'com.shizhefei:ViewPagerIndicator:1.1.7'
+    //magic indicator
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
     //glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     //系统状态栏颜色库

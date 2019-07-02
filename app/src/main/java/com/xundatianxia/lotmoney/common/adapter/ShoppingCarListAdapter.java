@@ -2,6 +2,7 @@ package com.xundatianxia.lotmoney.common.adapter;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.QuickContactBadge;
@@ -18,7 +19,9 @@ import com.xundatianxia.lotmoney.common.bean.ShoppingCarBean;
 import com.xundatianxia.lotmoney.common.utils.GlideUtils;
 
 import java.util.List;
-
+/**
+ * Created by zt on 2019/7/1.
+ */
 public class ShoppingCarListAdapter extends BaseQuickAdapter<ShoppingCarBean, BaseViewHolder> {
 
 
@@ -31,12 +34,14 @@ public class ShoppingCarListAdapter extends BaseQuickAdapter<ShoppingCarBean, Ba
 
     @Override
     protected void convert(BaseViewHolder helper, ShoppingCarBean shoppingCarBean) {
-//        helper.setText(R.id.tv_shopping_car_title, shoppingCarBean.getShoppingCarTitle());
+        helper.setText(R.id.tv_shopping_car_title, shoppingCarBean.getShoppingCarTitle());
         helper.setText(R.id.tv_shopping_car_sale_out, shoppingCarBean.getShoppingSaleOut());
         helper.setText(R.id.tv_shopping_car_repertory, shoppingCarBean.getShoppingCarRepertory());
         helper.setText(R.id.tv_shopping_car_price, shoppingCarBean.getShoppingCarPrice());
         helper.setText(R.id.tv_shopping_car_number, shoppingCarBean.getShoppingCarNumber());
+//        helper.setText(R.id.tv_product_store, shoppingCarBean.getShoppingCarStore());
 
+        helper.addOnClickListener(R.id.cb_choose_shopping_car_item);
         helper.addOnClickListener(R.id.iv_shopping_car_delete);
         helper.addOnClickListener(R.id.ll_shopping_car_subtract);
         helper.addOnClickListener(R.id.ll_shopping_car_add);
@@ -45,6 +50,15 @@ public class ShoppingCarListAdapter extends BaseQuickAdapter<ShoppingCarBean, Ba
         ImageView delete = helper.getView(R.id.iv_shopping_car_delete);
         LinearLayout subtractLinearLayout = helper.getView(R.id.ll_shopping_car_subtract);
         LinearLayout addLinearLayout = helper.getView(R.id.ll_shopping_car_add);
+
+        CheckBox box = helper.getView(R.id.cb_choose_shopping_car_item);
+        if (shoppingCarBean.getType() == 1) {
+            box.setChecked(true);
+        } else {
+            box.setChecked(false);
+        }
+
+
     }
 
 }

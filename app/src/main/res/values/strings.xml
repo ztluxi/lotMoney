@@ -10,6 +10,7 @@
     <!--我的-->
     <string name="my_integral">我的积分</string>
     <string name="my_all_orders">全部订单</string>
+    <string name="my_all">全部</string>
     <string name="my_obligation">待付款</string>
     <string name="my_send_the_goods">待发货</string>
     <string name="my_wait_for_receiving">待收货</string>
@@ -33,6 +34,7 @@
     <string name="my_add_new_address_edit_consignee_name">请填写收货人姓名</string>
     <string name="my_add_new_address_edit_consignee_phone">请填写收货人电话</string>
     <string name="my_save">保存</string>
+    <string name="my_touch_service">联系客服</string>
 
 
     <!--购物车-->
@@ -45,9 +47,10 @@
     <string name="shopping_car_sale_out">已销售：</string>
     <string name="shopping_car_repertory">库存：</string>
 
-
-    <string name="home_search">搜索</string>
+    <!--首页-->
     <string name="home_recent_search">最近搜索</string>
+    <string name="home_input_search_product_name">请输入搜索商品名称</string>
+    <string name="home_search">搜索</string>
 
 
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,29 +11,39 @@
         android:id="@+id/title"
         layout="@layout/base_title" />
 
-    <TextView
-        android:id="@+id/tv_edit"
+    <LinearLayout
+        android:id="@+id/ll_edit"
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_below="@+id/title"
         android:layout_marginTop="10dp"
         android:background="@color/white"
-        android:gravity="end|center"
-        android:paddingRight="15dp"
-        android:text="@string/shopping_car_edit"
-        android:textColor="@color/color_c4c4c2"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        tools:ignore="MissingConstraints" />
+        android:gravity="end"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:gravity="end|center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/shopping_car_edit"
+            android:textColor="@color/color_c4c4c2"
+            android:textSize="12sp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/ll_edit"
         android:descendantFocusability="blocksDescendants"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/rl_bottom"
-        app:layout_constraintTop_toBottomOf="@+id/tv_edit"
         app:srlAccentColor="@color/color_base_red"
         app:srlEnableFooterFollowWhenLoadFinished="true"
         app:srlEnableScrollContentWhenLoaded="true"
@@ -64,10 +74,10 @@
         android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints">
 
 
@@ -79,14 +89,14 @@
             android:paddingLeft="10dp">
 
             <CheckBox
-                android:padding="10dp"
-                android:drawableStart="@drawable/shopping_car_choose"
-                android:drawableLeft="@drawable/shopping_car_choose"
                 android:id="@+id/cb_all_choose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
-                android:checked="false" />
+                android:checked="false"
+                android:drawableStart="@drawable/shopping_car_choose"
+                android:drawableLeft="@drawable/shopping_car_choose"
+                android:padding="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -117,7 +127,7 @@
             android:layout_marginRight="20dp"
             android:layout_toLeftOf="@+id/tv_close_an_account"
             android:gravity="center"
-            android:text="¥98.90"
+            android:text="¥0.0"
             android:textColor="@color/color_ff4040"
             android:textSize="12sp" />
 
@@ -134,5 +144,5 @@
     </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
 

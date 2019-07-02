@@ -2,9 +2,7 @@ package com.xundatianxia.lotmoney.ui.fragment;
 
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +37,8 @@ public class ShoppingCarFragment extends BaseFragment {
     CheckBox cbAllChoose;
     @BindView(R.id.tv_all_money)
     TextView tvAllMoney;
-
+    @BindView(R.id.tv_close_an_account)
+    TextView tvCloseAnAccount;
 
     @Override
     protected int getLayout() {
@@ -53,7 +52,7 @@ public class ShoppingCarFragment extends BaseFragment {
         tvTitleRight.setTextColor(getResources().getColor(R.color.color_base_red));
         tvTitleRight.setVisibility(View.VISIBLE);
 
-        adapter = new ShoppingCarListAdapter(R.layout.fragment_shopping_car_item, shoppingCarBeans);
+        adapter = new ShoppingCarListAdapter(R.layout.adapter_shopping_car_item, shoppingCarBeans);
         rvShoppingCar.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvShoppingCar.setAdapter(adapter);
         adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
@@ -65,18 +64,14 @@ public class ShoppingCarFragment extends BaseFragment {
                 switch (itemViewId) {
                     case R.id.iv_shopping_car_delete:
                         adapter.remove(position);
-                        adapter.notifyItemChanged(position);
                         break;
-
                     case R.id.ll_shopping_car_subtract:
                         bean.setShoppingCarNumber(String.valueOf(number - 1));
-                        adapter.notifyItemChanged(position);
+                        adapter.notifyDataSetChanged();
                         break;
-
                     case R.id.ll_shopping_car_add:
                         bean.setShoppingCarNumber(String.valueOf(number + 1));
-
-                        adapter.notifyItemChanged(position);
+                        adapter.notifyDataSetChanged();
                         break;
                 }
             }
@@ -89,12 +84,13 @@ public class ShoppingCarFragment extends BaseFragment {
         for (int i = 0; i < 5; i++) {
             ShoppingCarBean bean = new ShoppingCarBean();
             bean.setShoppingCarNumber(10 + i + "");
-            bean.setShoppingCarPrice(31 + i + "");
+            bean.setShoppingCarPrice(1 + i + "");
             bean.setShoppingCarRepertory(800 + i + "");
-//            bean.setShoppingCarStore(100+i+"");
+            bean.setType(2);
             bean.setShoppingSaleOut(60 + i + "");
-//            bean.setShoppingCarTitle(60+i+"");
+            bean.setShoppingCarTitle("2017夏季男士短袖T恤韩版翻领polo衫V领潮流上衣男装修" + i + "");
 //            bean.setShoppingCarUrl("");
+//            bean.setShoppingCarStore(100+i+"");
             shoppingCarBeans.add(bean);
         }
         adapter.addData(shoppingCarBeans);
@@ -102,14 +98,43 @@ public class ShoppingCarFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.tv_title_right, R.id.cb_all_choose, R.id.tv_all_money})
+    @OnClick({R.id.tv_title_right, R.id.cb_all_choose, R.id.tv_all_money, R.id.tv_close_an_account})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_title_right:
                 break;
             case R.id.cb_all_choose:
+                Double allMoney = 0.0;
+                for (int i = 0; i < shoppingCarBeans.size(); i++) {
+                    allMoney += Double.parseDouble(shoppingCarBeans.get(i).getShoppingCarPrice());
+                    ShoppingCarBean bean = new ShoppingCarBean();
+                    if (cbAllChoose.isChecked()) {
+                        bean.setType(1);
+                    } else {
+                        bean.setType(2);
+                    }
+                    bean.setShoppingCarNumber(adapter.getData().get(i).getShoppingCarNumber());
+                    bean.setShoppingCarTitle(adapter.getData().get(i).getShoppingCarTitle());
+                    bean.setShoppingCarStore(adapter.getData().get(i).getShoppingCarStore());
+                    bean.setShoppingSaleOut(adapter.getData().get(i).getShoppingSaleOut());
+                    bean.setShoppingCarPrice(adapter.getData().get(i).getShoppingCarPrice());
+                    bean.setShoppingCarRepertory(adapter.getData().get(i).getShoppingCarRepertory());
+                    shoppingCarBeans.set(i, bean);
+                }
+                if (cbAllChoose.isChecked()) {
+                    tvAllMoney.setText("¥" + allMoney);
+                } else {
+                    tvAllMoney.setText("¥" + 0.0);
+                }
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.tv_all_money:
+
+
+                break;
+            case R.id.tv_close_an_account:
+
+
                 break;
         }
     }

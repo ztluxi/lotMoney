@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.xundatianxia.lotmoney.R;
 import com.xundatianxia.lotmoney.base.BaseFragment;
+import com.xundatianxia.lotmoney.ui.activity.AllOrderActivity;
 import com.xundatianxia.lotmoney.ui.activity.ShoppingAddressActivity;
 
 import butterknife.BindView;
@@ -36,7 +37,7 @@ public class UserCenterFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.my_integral, R.id.my_clear_cache, R.id.my_shopping_address})
+    @OnClick({R.id.my_integral, R.id.my_clear_cache, R.id.my_shopping_address,R.id.tv_all_order})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.my_integral:
@@ -44,6 +45,9 @@ public class UserCenterFragment extends BaseFragment {
                 break;
             case R.id.my_clear_cache:
 
+                break;
+            case R.id.tv_all_order:
+                startActivity(new Intent(getActivity(), AllOrderActivity.class));
                 break;
             case R.id.my_shopping_address:
                 startActivity(new Intent(getActivity(), ShoppingAddressActivity.class));

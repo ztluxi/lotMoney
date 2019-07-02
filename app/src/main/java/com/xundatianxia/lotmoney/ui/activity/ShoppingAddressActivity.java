@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.xundatianxia.lotmoney.R;
 import com.xundatianxia.lotmoney.base.BaseActivity;
 import com.xundatianxia.lotmoney.common.adapter.ShoppingAddressAdapter;
@@ -45,7 +44,7 @@ public class ShoppingAddressActivity extends BaseActivity {
         initTitle(getString(R.string.my_shopping_address));
         imageTitleLeft.setVisibility(View.VISIBLE);
         rvAddNewAddress.setLayoutManager(new LinearLayoutManager(this));
-        shoppingAddressAdapter = new ShoppingAddressAdapter(R.layout.avtivity_shopping_address_item, shoppingAddressBeans);
+        shoppingAddressAdapter = new ShoppingAddressAdapter(R.layout.adapter_shopping_address_item, shoppingAddressBeans);
         rvAddNewAddress.setAdapter(shoppingAddressAdapter);
         onclick();
     }
@@ -59,15 +58,18 @@ public class ShoppingAddressActivity extends BaseActivity {
                 switch (itemViewId) {
                     case R.id.iv_shopping_address_delete:
                         adapter.remove(position);
-                        adapter.notifyItemChanged(position);
                         break;
                     case R.id.iv_shopping_address_edit:
 
-
                         break;
                     case R.id.cb_default_address:
-                        bean.setType(2);
-                        adapter.notifyItemChanged(position);
+                        int type = bean.getType();
+                        if (type == 1) {
+                            bean.setType(2);
+                        } else {
+                            bean.setType(1);
+                        }
+                        adapter.notifyDataSetChanged();
                         break;
 
                 }
