@@ -6,11 +6,11 @@
 
     <ImageView
         android:id="@+id/iv_shopping_car_url"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/ic_item_bg" />
+        android:background="@drawable/ic_user_center_bg" />
 
 
     <LinearLayout

@@ -37,8 +37,6 @@ public class ShoppingCarFragment extends BaseFragment {
     SmartRefreshLayout refreshLayout;
     @BindView(R.id.cb_all_choose)
     CheckBox cbAllChoose;
-    @BindView(R.id.ll_all_choose)
-    LinearLayout llAllChoose;
     @BindView(R.id.tv_all_money)
     TextView tvAllMoney;
 
@@ -104,12 +102,12 @@ public class ShoppingCarFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.tv_title_right, R.id.ll_all_choose, R.id.tv_all_money})
+    @OnClick({R.id.tv_title_right, R.id.cb_all_choose, R.id.tv_all_money})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_title_right:
                 break;
-            case R.id.ll_all_choose:
+            case R.id.cb_all_choose:
                 break;
             case R.id.tv_all_money:
                 break;

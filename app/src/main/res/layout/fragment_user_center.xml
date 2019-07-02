@@ -103,6 +103,7 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/ll_service"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:background="@drawable/ic_user_center_service_bg"
@@ -208,10 +209,11 @@
 
 
             <TextView
+                android:id="@+id/my_integral"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_integral"
-                android:drawableRight="@drawable/page_1"
+                android:drawableRight="@drawable/ic_right"
                 android:drawablePadding="10dp"
                 android:gravity="center|left"
                 android:paddingLeft="20dp"
@@ -228,10 +230,11 @@
 
 
             <TextView
+                android:id="@+id/my_clear_cache"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_clear"
-                android:drawableRight="@drawable/page_1"
+                android:drawableRight="@drawable/ic_right"
                 android:drawablePadding="10dp"
                 android:gravity="center|left"
                 android:paddingLeft="20dp"
@@ -247,17 +250,18 @@
                 android:background="@color/color_eeeeee" />
 
             <TextView
+                android:id="@+id/my_shopping_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_receiving_address"
-                android:drawableRight="@drawable/page_1"
+                android:drawableRight="@drawable/ic_right"
                 android:drawablePadding="10dp"
                 android:gravity="center|left"
                 android:paddingLeft="20dp"
                 android:paddingTop="25dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="14dp"
-                android:text="@string/my_shipping_address"
+                android:text="@string/my_shopping_address"
                 android:textColor="@color/color_969696" />
 
             <TextView

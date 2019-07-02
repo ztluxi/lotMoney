@@ -22,7 +22,6 @@
         android:text="@string/shopping_car_edit"
         android:textColor="@color/color_c4c4c2"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/realtabcontent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         tools:ignore="MissingConstraints" />
 
@@ -73,7 +72,6 @@
 
 
         <LinearLayout
-            android:id="@+id/ll_all_choose"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
@@ -81,17 +79,18 @@
             android:paddingLeft="10dp">
 
             <CheckBox
+                android:padding="10dp"
+                android:drawableStart="@drawable/shopping_car_choose"
+                android:drawableLeft="@drawable/shopping_car_choose"
                 android:id="@+id/cb_all_choose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shopping_car_choose"
                 android:button="@null"
                 android:checked="false" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
                 android:gravity="center"
                 android:text="@string/shopping_car_all_choose"
                 android:textColor="@color/color_4a4a4a"

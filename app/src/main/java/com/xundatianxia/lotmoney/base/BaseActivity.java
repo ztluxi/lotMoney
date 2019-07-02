@@ -91,6 +91,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         image_title_right = findViewById(R.id.image_title_right);
         text_title = findViewById(R.id.text_title);
         text_title.setText(titleStr);
+        image_title_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 

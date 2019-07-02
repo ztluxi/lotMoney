@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f4f5f9"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/ll_base"
+        layout="@layout/base_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="12dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/my_add_new_address_consignee"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_add_new_address_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="end"
+                android:hint="@string/my_add_new_address_edit_consignee_name"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:paddingRight="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/color_9b9b9b"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_d8d8d8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/my_add_new_address_phone"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_add_new_address_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="end"
+                android:hint="@string/my_add_new_address_edit_consignee_phone"
+                android:maxEms="11"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:paddingRight="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/color_9b9b9b"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_d8d8d8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_add_new_address_area"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_add_new_address_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_right"
+                android:drawablePadding="10dp"
+                android:gravity="end"
+                android:hint="@string/my_add_new_address_choose"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:paddingRight="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/color_9b9b9b"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_d8d8d8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_add_new_address_street"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_add_new_address_street"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="null"
+                android:gravity="end"
+                android:hint="@string/my_add_new_address_edit"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:paddingRight="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/color_9b9b9b"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_d8d8d8" />
+
+        <EditText
+            android:id="@+id/et_add_new_address_detail"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="@string/my_add_new_address_detail_address"
+            android:textColor="@color/color_9b9b9b"
+            android:textColorHint="@color/color_9b9b9b" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/my_add_new_address_default"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+
+        <CheckBox
+            android:id="@+id/ck_add_new_address_default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:button="@null"
+            android:checked="false"
+            android:drawableStart="@drawable/ic_add_new_address_default_bg"
+            android:drawableLeft="@drawable/ic_add_new_address_default_bg"
+            android:padding="10dp" />
+
+
+    </RelativeLayout>
+</LinearLayout>
+

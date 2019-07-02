@@ -81,4 +81,6 @@ dependencies {
     implementation 'me.jessyan:autosize:1.1.2'
     //跑马灯通知
     implementation 'com.sunfusheng:MarqueeView:1.4.1'
+    //城市选择
+    implementation 'com.zaaach:citypicker:2.0.3'
 }
