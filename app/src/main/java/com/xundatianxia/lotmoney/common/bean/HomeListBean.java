@@ -1,8 +1,11 @@
 package com.xundatianxia.lotmoney.common.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
-public class HomeListBean implements MultiItemEntity  {
+public class HomeListBean implements MultiItemEntity, Parcelable {
     public static final int TOP = 1;
     public static final int IMG = 2;
     private String productUrl;
@@ -10,6 +13,33 @@ public class HomeListBean implements MultiItemEntity  {
     private String productType;//类型
     private String productStore;//库存
     private int itemType;
+
+    public HomeListBean(Parcel in) {
+        productUrl = in.readString();
+        productTitle = in.readString();
+        productType = in.readString();
+        productStore = in.readString();
+        itemType = in.readInt();
+        productSell = in.readString();
+        productOldPrice = in.readString();
+        productNewPrice = in.readString();
+    }
+
+    public static final Creator<HomeListBean> CREATOR = new Creator<HomeListBean>() {
+        @Override
+        public HomeListBean createFromParcel(Parcel in) {
+            return new HomeListBean(in);
+        }
+
+        @Override
+        public HomeListBean[] newArray(int size) {
+            return new HomeListBean[size];
+        }
+    };
+
+    public HomeListBean() {
+
+    }
 
     @Override
     public int getItemType() {
@@ -78,5 +108,22 @@ public class HomeListBean implements MultiItemEntity  {
 
     public void setProductNewPrice(String productNewPrice) {
         this.productNewPrice = productNewPrice;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(productUrl);
+        parcel.writeString(productTitle);
+        parcel.writeString(productType);
+        parcel.writeString(productStore);
+        parcel.writeInt(itemType);
+        parcel.writeString(productSell);
+        parcel.writeString(productOldPrice);
+        parcel.writeString(productNewPrice);
     }
 }

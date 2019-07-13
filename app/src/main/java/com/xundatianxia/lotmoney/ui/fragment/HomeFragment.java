@@ -1,8 +1,10 @@
 package com.xundatianxia.lotmoney.ui.fragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +22,7 @@ import com.xundatianxia.lotmoney.common.persenter.HomePresenter;
 import com.xundatianxia.lotmoney.common.utils.GlideImageLoader;
 import com.xundatianxia.lotmoney.common.utils.GridSpacingItemDecoration;
 import com.xundatianxia.lotmoney.common.view.HomeView;
+import com.xundatianxia.lotmoney.ui.activity.SearchActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
@@ -27,8 +30,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
+import static com.blankj.utilcode.util.ActivityUtils.startActivity;
+
+/**
+ * Created by zt on 2019/7/3.
+ * 首页
+ */
 public class HomeFragment extends BaseFragment implements HomeView {
+    @BindView(R.id.tv_search)
+    TextView tvSearch;
     private HomePresenter presenter;
     private HomeListAdapter adapter;
     private List<HomeListBean> listBeans = new ArrayList<>();
@@ -39,8 +51,6 @@ public class HomeFragment extends BaseFragment implements HomeView {
     SmartRefreshLayout relativeLayout;
     @BindView(R.id.rv)
     RecyclerView home_list;
-    //    @BindView(R.id.banner)
-//    Banner banner;
     String image1 = "https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=c87e52ca1a38534393cf8121a312b01f/e1fe9925bc315c60c9fcca4987b1cb134954772f.jpg";
     String image2 = "https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=92afee66fd36afc3110c39658318eb85/908fa0ec08fa513db777cf78376d55fbb3fbd9b3.jpg";
     List<String> images = new ArrayList<>();
@@ -56,6 +66,7 @@ public class HomeFragment extends BaseFragment implements HomeView {
         List<String> messages = new ArrayList<>();
         messages.add("每日上新，打牌显示特卖，优选新品任你挑！");
         messages.add("1. 大家好，我是孙福生。");
+        //广告轮播
         marqueeView.startWithList(messages);
         adapter = new HomeListAdapter(listBeans, getActivity());
         home_list.setLayoutManager(new GridLayoutManager(getActivity(), 2));
@@ -160,17 +171,6 @@ public class HomeFragment extends BaseFragment implements HomeView {
         adapter.addData(listBeans);
         adapter.notifyDataSetChanged();
     }
-//
-//    @OnClick({R.id.tv_home})
-//    public void onViewClicked(View view) {
-//        switch (view.getId()) {
-//            case R.id.tv_home:
-//                presenter = new HomePresenter(getActivity(), this);
-//                presenter.getMineList();
-//                break;
-//
-//        }
-//    }
 
     @Override
     public void success(String success) {
@@ -180,4 +180,8 @@ public class HomeFragment extends BaseFragment implements HomeView {
     public void fail(String fail) {
     }
 
+    @OnClick(R.id.tv_search)
+    public void onViewClicked() {
+        startActivity(new Intent(getActivity(), SearchActivity.class));
+    }
 }

@@ -1,6 +1,7 @@
 package com.xundatianxia.lotmoney.ui.activity;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,8 +13,12 @@ import androidx.viewpager.widget.ViewPager;
 import com.xundatianxia.lotmoney.R;
 import com.xundatianxia.lotmoney.base.BaseActivity;
 import com.xundatianxia.lotmoney.common.adapter.ViewPagerAdapter;
+import com.xundatianxia.lotmoney.common.bean.AllOrderBean;
 import com.xundatianxia.lotmoney.common.view.ScaleTransitionPagerTitleView;
 import com.xundatianxia.lotmoney.ui.fragment.AllOrderFragment;
+import com.xundatianxia.lotmoney.ui.fragment.PendingReceiptFragment;
+import com.xundatianxia.lotmoney.ui.fragment.PrePaymentFragment;
+import com.xundatianxia.lotmoney.ui.fragment.WaitForDeliveryFragment;
 
 import net.lucode.hackware.magicindicator.FragmentContainerHelper;
 import net.lucode.hackware.magicindicator.MagicIndicator;
@@ -27,8 +32,11 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.Simple
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by zt on 2019/7/2.
@@ -44,9 +52,11 @@ public class AllOrderActivity extends BaseActivity {
     @BindView(R.id.view_pager)
     ViewPager viewPager;
 
+    private ArrayList<AllOrderBean> allOrderBeans = new ArrayList<>();
     private List<String> mTitleDataList = new ArrayList<>();
     private ViewPagerAdapter pagerAdapter;
     private FragmentContainerHelper mFramentContainerHelper;
+    private int type;//指定页面
 
     @Override
     public int getLayout() {
@@ -66,20 +76,53 @@ public class AllOrderActivity extends BaseActivity {
                 finish();
             }
         });
+        type = getIntent().getIntExtra("type", -1);
+
 
         pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        intOrderData();
         List<Fragment> fragments = new ArrayList<>();
-        for (int i = 0; i < mTitleDataList.size(); i++) {
-            fragments.add(AllOrderFragment.newInstance(i));
-        }
+        fragments.add(AllOrderFragment.newInstance(allOrderBeans, 0));
+        fragments.add(PrePaymentFragment.newInstance(allOrderBeans, 1));
+        fragments.add(PendingReceiptFragment.newInstance(allOrderBeans, 2));
+        fragments.add(WaitForDeliveryFragment.newInstance(allOrderBeans, 3));
         pagerAdapter.setItems(fragments, mTitleDataList);
         viewPager.setAdapter(pagerAdapter);
         viewPager.setOffscreenPageLimit(mTitleDataList.size());
+
         initMagicIndicator();
+        //指定进入fragment
+        viewPager.setCurrentItem(type);
         mFramentContainerHelper = new FragmentContainerHelper(magicIndicator);
-        mFramentContainerHelper.handlePageSelected(4);
+        mFramentContainerHelper.handlePageSelected(type);
+
+
+
     }
 
+    private void intOrderData() {
+        for (int i = 0; i < 5; i++) {
+            AllOrderBean orderBean = new AllOrderBean();
+            orderBean.setOrderTitle("" + i);
+            orderBean.setOrderNewPrice("26" + i);
+            orderBean.setOrderOldPrice("36" + i);
+            orderBean.setOrderOldPrice("36" + i);
+            if (i == 2) {
+                orderBean.setType(2);
+                orderBean.setOrderTitle("待发货");
+            } else if (i == 3) {
+                orderBean.setType(3);
+                orderBean.setOrderTitle("待收货");
+            } else if (i == 1) {
+                orderBean.setType(1);
+                orderBean.setOrderTitle("待付款");
+            }
+            allOrderBeans.add(orderBean);
+        }
+
+    }
+
+    //初始化滑动条
     private void initMagicIndicator() {
         magicIndicator.setBackgroundColor(ContextCompat.getColor(this, R.color.white));
         CommonNavigator commonNavigator = new CommonNavigator(this);
@@ -131,6 +174,8 @@ public class AllOrderActivity extends BaseActivity {
 
         magicIndicator.setNavigator(commonNavigator);
         ViewPagerHelper.bind(magicIndicator, viewPager);
+
+
     }
 
 

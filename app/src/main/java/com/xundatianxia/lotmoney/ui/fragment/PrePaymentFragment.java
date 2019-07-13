@@ -1,8 +1,6 @@
 package com.xundatianxia.lotmoney.ui.fragment;
 
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.renderscript.AllocationAdapter;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -21,9 +19,11 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by zt on 2019/7/2.
+ * Created by zt on 2019/7/3.
+ * 等待付款
  */
-public class AllOrderFragment extends BaseFragment {
+public class PrePaymentFragment extends BaseFragment {
+
     @BindView(R.id.rv_all_order)
     RecyclerView rvAllOrder;
     @BindView(R.id.refreshLayout)
@@ -33,13 +33,21 @@ public class AllOrderFragment extends BaseFragment {
     private List<AllOrderBean> allOrderBeans = new ArrayList<>();
     private int type;
 
-    public static AllOrderFragment newInstance(ArrayList<AllOrderBean> allOrderBeans, int i) {
-        AllOrderFragment fragment = new AllOrderFragment();
+    public static PrePaymentFragment newInstance(ArrayList<AllOrderBean> allOrderBeans, int i) {
         Bundle args = new Bundle();
-        args.putParcelableArrayList("myOrder", allOrderBeans);
-        args.putInt("type", i);
+        PrePaymentFragment fragment = new PrePaymentFragment();
+        args.putParcelableArrayList("PPORDER", allOrderBeans);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            allOrderBeans = getArguments().getParcelableArrayList("PPORDER");
+            type = getArguments().getInt("type");
+        }
     }
 
     @Override
@@ -48,17 +56,14 @@ public class AllOrderFragment extends BaseFragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            allOrderBeans = getArguments().getParcelableArrayList("myOrder");
-            type = getArguments().getInt("type");
-        }
-    }
-
-    @Override
     protected void initView() {
-        allOrderAdapter = new AllOrderAdapter(R.layout.adapter_all_order_item, allOrderBeans);
+        List<AllOrderBean> list = new ArrayList<>();
+        for (int i = 0; i < allOrderBeans.size(); i++) {
+            if (allOrderBeans.get(i).getType() == 1) {
+                list.add(allOrderBeans.get(i));
+            }
+        }
+        allOrderAdapter = new AllOrderAdapter(R.layout.adapter_all_order_item, list);
         rvAllOrder.setLayoutManager(new LinearLayoutManager(getActivity()));
         refreshLayout.setEnableAutoLoadmore(true);
         rvAllOrder.setAdapter(allOrderAdapter);
@@ -66,7 +71,6 @@ public class AllOrderFragment extends BaseFragment {
 
     @Override
     public void initData() {
-
 
     }
 }

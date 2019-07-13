@@ -21,7 +21,7 @@ public class HomeListAdapter extends BaseMultiItemQuickAdapter<HomeListBean, Bas
         super(data);
         this.mContext = context;
         addItemType(HomeListBean.TOP, R.layout.fragment_home_item_top);
-        addItemType(HomeListBean.IMG, R.layout.fragment_home_item);
+        addItemType(HomeListBean.IMG, R.layout.adapter_home_item);
     }
 
     @Override

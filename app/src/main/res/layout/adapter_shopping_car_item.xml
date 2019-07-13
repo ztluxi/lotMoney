@@ -7,7 +7,8 @@
 
     <CheckBox
         android:visibility="visible"
-        android:paddingLeft="11dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:checked="false"
         android:id="@+id/cb_choose_shopping_car_item"
         android:layout_alignParentLeft="true"
@@ -22,7 +23,6 @@
         android:id="@+id/iv_shopping_car_url"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="11dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/ic_user_center_bg" />
 

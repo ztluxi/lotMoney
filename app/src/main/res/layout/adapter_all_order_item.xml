@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="217dp"
+    android:layout_marginTop="10dp"
     android:background="@color/white">
 
 
     <TextView
-        android:id="@+id/tv_order_obligation"
+        android:id="@+id/tv_order_title"
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_alignParentRight="true"
@@ -23,7 +24,7 @@
         android:id="@+id/ll_center"
         android:layout_width="match_parent"
         android:layout_height="94dp"
-        android:layout_below="@+id/tv_order_obligation"
+        android:layout_below="@+id/tv_order_title"
         android:background="@color/color_eff3f6"
         android:orientation="horizontal"
         android:paddingTop="6dp">
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:orientation="horizontal">
+
             <LinearLayout
                 android:id="@+id/ll_money"
                 android:layout_width="wrap_content"
@@ -83,16 +85,16 @@
             </LinearLayout>
 
             <TextView
-                android:paddingRight="70dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:id="@+id/tv_order_title"
+                android:id="@+id/tv_order_product_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="4"
+                android:paddingRight="70dp"
                 android:text="地方撒"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/ll_money"
                 tools:ignore="MissingConstraints" />
 
@@ -135,15 +137,24 @@
                     android:textColor="@color/color_9c9c9c"
                     android:textSize="10sp" />
             </LinearLayout>
-
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_order_view_logistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@+id/tv_order_touch_service"
+        android:background="@drawable/touch_service_bg"
+        android:gravity="center"
+        android:text="@string/my_view_logistics"
+        android:textColor="@color/color_4a4a4a"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/tv_order_touch_service"

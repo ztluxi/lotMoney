@@ -14,10 +14,10 @@
 
 
     <LinearLayout
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -33,9 +33,9 @@
                 android:src="@drawable/ic_yan" />
 
             <TextView
-                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
                 android:text="烟"
                 android:textColor="@color/color_999999" />
         </LinearLayout>
@@ -53,9 +53,9 @@
                 android:src="@drawable/ic_jiu" />
 
             <TextView
-                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
                 android:text="酒"
                 android:textColor="@color/color_999999" />
         </LinearLayout>
@@ -73,9 +73,9 @@
                 android:src="@drawable/ic_tea" />
 
             <TextView
-                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
                 android:text="茶"
                 android:textColor="@color/color_999999" />
         </LinearLayout>
@@ -93,14 +93,18 @@
                 android:src="@drawable/ic_te" />
 
             <TextView
-                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
                 android:text="土特产"
                 android:textColor="@color/color_999999" />
         </LinearLayout>
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/color_f4f4f4" />
 
 </LinearLayout>
 

@@ -35,6 +35,20 @@
     <string name="my_add_new_address_edit_consignee_phone">请填写收货人电话</string>
     <string name="my_save">保存</string>
     <string name="my_touch_service">联系客服</string>
+    <string name="my_person_service">人工客服</string>
+    <string name="my_view_logistics">查看物流</string>
+    <string name="my_delivery_method">配送方式</string>
+    <string name="my_delivery_method_check">完成下单可在我的订单里查看</string>
+    <string name="my_fill_in_background">后台填写</string>
+    <string name="my_order_number">订单编号</string>
+    <string name="my_standard">规格</string>
+    <string name="my_pay_way">支付方式</string>
+    <string name="my_payable_amount">应付款金额:</string>
+    <string name="my_confirm_payment">确认付款</string>
+    <string name="my_choose_charge_way">可选择币种、微信、支付宝、多种支付方式，请点击下方
+确认付款，详情和人工联系～</string>
+    <string name="my_order_integral">该订单完成后您将获得48积分，一元等于一积分，满一100免费
+。</string>
 
 
     <!--购物车-->
@@ -51,6 +65,9 @@
     <string name="home_recent_search">最近搜索</string>
     <string name="home_input_search_product_name">请输入搜索商品名称</string>
     <string name="home_search">搜索</string>
+    <string name="home_cancel">取消</string>
+    <string name="home_search_sales_volume">销量</string>
+    <string name="home_search_new_product">最新</string>
 
 
 </resources>

@@ -27,7 +27,7 @@
             android:visibility="gone" />
 
         <ImageView
-            android:visibility="visible"
+            android:visibility="gone"
             android:src="@drawable/ic_back"
             android:id="@+id/image_title_left"
             android:layout_width="wrap_content"

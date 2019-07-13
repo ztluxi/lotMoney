@@ -1,278 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--状态栏背景-->
-    <View
-        android:id="@+id/view_status_bar"
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:background="@color/color_base_red" />
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/rl_base_layout"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@color/color_base_red"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/text_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:lines="1"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/image_title_right"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="17dp"
-            android:layout_marginRight="17dp"
-            android:src="@drawable/ic_news"
-            android:visibility="visible" />
-
-    </RelativeLayout>
-
-
-    <ScrollView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+        <!--状态栏背景-->
+        <View
+            android:id="@+id/view_status_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="20dp"
+            android:background="@color/color_base_red" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+        <RelativeLayout
+            android:id="@+id/rl_base_layout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/color_base_red"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_user_center_bg"
-                android:gravity="bottom"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="20dp">
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:lines="1"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/image_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:src="@drawable/ic_news"
+                android:visibility="visible" />
+
+        </RelativeLayout>
 
 
-                <ImageView
-                    android:id="@+id/iv_user_image"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:src="@drawable/ic_user_default" />
+        <ScrollView
 
-                <TextView
-                    android:id="@+id/tv_user_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="55dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/iv_user_image"
-                    android:gravity="center"
-                    android:text="孙悟空"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-
-                <TextView
-                    android:id="@+id/tv_integral"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/my_integral"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_integral"
-                    android:layout_alignParentRight="true"
-                    android:text="100.0"
-                    android:textColor="@color/white"
-                    android:textSize="30sp" />
-            </RelativeLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/ll_service"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:background="@drawable/ic_user_center_service_bg"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_user_center_bg"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="20dp">
+
+
+                    <ImageView
+                        android:id="@+id/iv_user_image"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/ic_user_default" />
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/iv_user_image"
+                        android:gravity="center"
+                        android:text="孙悟空"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_integral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/my_integral"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_integral"
+                        android:layout_alignParentRight="true"
+                        android:text="100.0"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_service"
+                    android:layout_width="match_parent"
                     android:layout_height="44dp"
-                    android:drawableLeft="@drawable/ic_service"
+                    android:background="@drawable/ic_user_center_service_bg"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:drawableLeft="@drawable/ic_service"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:text="人工服务"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_all_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@drawable/ic_all_order"
                     android:drawablePadding="5dp"
-                    android:gravity="center"
-                    android:text="人工服务"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/my_all_orders"
+                    android:textColor="@color/color_464646" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/color_eeeeee" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_pre_payment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_payment"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="@string/my_obligation"
+                        android:textColor="@color/color_5d5d5d" />
+
+                    <TextView
+                        android:id="@+id/tv_pending_receipt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_send_out"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="@string/my_send_the_goods"
+                        android:textColor="@color/color_5d5d5d" />
+
+                    <TextView
+                        android:id="@+id/tv_wait_for_delivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_take_goods"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="@string/my_wait_for_receiving"
+                        android:textColor="@color/color_5d5d5d" />
+
+                    <TextView
+                        android:id="@+id/tv_service_after_sale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_after_sale"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="@string/my_after_sale"
+                        android:textColor="@color/color_5d5d5d" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/color_f4f4f4" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_function"
+                    android:drawablePadding="5dp"
+                    android:text="@string/my_commonly_used_function"
+                    android:textColor="@color/color_464646" />
+
+
+                <TextView
+                    android:id="@+id/my_integral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_integral"
+                    android:drawableRight="@drawable/ic_right"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="25dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="14dp"
+                    android:text="@string/my_integral"
+                    android:textColor="@color/color_969696" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_eeeeee" />
+
+
+                <TextView
+                    android:id="@+id/my_clear_cache"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_clear"
+                    android:drawableRight="@drawable/ic_right"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="25dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="14dp"
+                    android:text="@string/my_clear_cache"
+                    android:textColor="@color/color_969696" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_eeeeee" />
+
+                <TextView
+                    android:id="@+id/my_shopping_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_receiving_address"
+                    android:drawableRight="@drawable/ic_right"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="25dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="14dp"
+                    android:text="@string/my_shopping_address"
+                    android:textColor="@color/color_969696" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_eeeeee" />
+
             </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/tv_all_order"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:drawableLeft="@drawable/ic_all_order"
-                android:drawablePadding="5dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="10dp"
-                android:text="@string/my_all_orders"
-                android:textColor="@color/color_464646" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/color_eeeeee" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/ic_payment"
-                    android:drawablePadding="6dp"
-                    android:gravity="center"
-                    android:text="@string/my_obligation"
-                    android:textColor="@color/color_5d5d5d" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/ic_send_out"
-                    android:drawablePadding="6dp"
-                    android:gravity="center"
-                    android:text="@string/my_send_the_goods"
-                    android:textColor="@color/color_5d5d5d" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/ic_take_goods"
-                    android:drawablePadding="6dp"
-                    android:gravity="center"
-                    android:text="@string/my_wait_for_receiving"
-                    android:textColor="@color/color_5d5d5d" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/ic_after_sale"
-                    android:drawablePadding="6dp"
-                    android:gravity="center"
-                    android:text="@string/my_after_sale"
-                    android:textColor="@color/color_5d5d5d" />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/color_f4f4f4" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_function"
-                android:drawablePadding="5dp"
-                android:text="@string/my_commonly_used_function"
-                android:textColor="@color/color_464646" />
-
-
-            <TextView
-                android:id="@+id/my_integral"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_integral"
-                android:drawableRight="@drawable/ic_right"
-                android:drawablePadding="10dp"
-                android:gravity="center|left"
-                android:paddingLeft="20dp"
-                android:paddingTop="25dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="14dp"
-                android:text="@string/my_integral"
-                android:textColor="@color/color_969696" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/color_eeeeee" />
-
-
-            <TextView
-                android:id="@+id/my_clear_cache"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_clear"
-                android:drawableRight="@drawable/ic_right"
-                android:drawablePadding="10dp"
-                android:gravity="center|left"
-                android:paddingLeft="20dp"
-                android:paddingTop="25dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="14dp"
-                android:text="@string/my_clear_cache"
-                android:textColor="@color/color_969696" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/color_eeeeee" />
-
-            <TextView
-                android:id="@+id/my_shopping_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_receiving_address"
-                android:drawableRight="@drawable/ic_right"
-                android:drawablePadding="10dp"
-                android:gravity="center|left"
-                android:paddingLeft="20dp"
-                android:paddingTop="25dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="14dp"
-                android:text="@string/my_shopping_address"
-                android:textColor="@color/color_969696" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/color_eeeeee" />
-
-        </LinearLayout>
-
-    </ScrollView>
-</LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
 
